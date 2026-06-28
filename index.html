@@ -5,8 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don Vito | Casa de Huéspedes en Cucullú</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            position: relative !important;
+            height: 55vh !important;
+            min-height: 380px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            color: white !important;
+            overflow: hidden !important;
+            background-color: #1a202c !important;
+        }
+        .slider-container {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
+        }
+        .slide {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+            opacity: 0 !important;
+            transition: opacity 1.2s ease-in-out !important;
+        }
+        .slide.active {
+            opacity: 1 !important;
+        }
+        .hero-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, 0.45) !important;
+            z-index: 2 !important;
+        }
+        .hero-content {
+            position: relative !important;
+            z-index: 3 !important;
+            padding: 0 20px !important;
+        }
+    </style>
 </head>
 <body>
+
     <header class="hero">
         <div class="slider-container">
             <img class="slide active" src="https://docs.google.com/thumbnail?id=1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf&sz=w1600" alt="Portada Don Vito">
@@ -30,71 +81,71 @@
     <section class="gallery">
         <h3>Nuestras Instalaciones</h3>
         <div class="gallery-grid">
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=16QWKZDevX6XyOoijgker_jiQCejudo-8">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=16QWKZDevX6XyOoijgker_jiQCejudo-8&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=16QWKZDevX6XyOoijgker_jiQCejudo-8&sz=w800" alt="Piscina 1">
                 <p>Piscina Privada</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA">
-                <img src="https://docs.google.com/thumbnail?id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA&sz=w800" alt="Piscina 2">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA&sz=w1200">
+                <img src="https://docs.google.com/thumbnail?id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA&sz=w800" alt="Zona de Solárium">
                 <p>Zona de Solárium</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx&sz=w800" alt="Patio">
                 <p>Amplio Jardín</p>
             </div>
             
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L">
-                <img src="https://docs.google.com/uc?export=view&id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L" alt="Sector de Parrilla">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L&sz=w1200">
+                <img src="https://docs.google.com/thumbnail?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L&sz=w800" alt="Sector de Parrilla">
                 <p>Sector de Parrilla</p>
             </div>
 
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL&sz=w800" alt="Fogata 1">
                 <p>Espacio de Fogón</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46&sz=w800" alt="Fogata 2">
                 <p>Noches de Fogata</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo&sz=w800" alt="Fachada 1">
                 <p>Entrada Principal</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G&sz=w800" alt="Fachada 2">
                 <p>Exterior de la Casa</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z&sz=w800" alt="Garage">
                 <p>Parking Privado</p>
             </div>
 
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb&sz=w800" alt="Living">
                 <p>Zona de Estar / Living</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=10eHOdm7vVeLEKzdgzh5tqHOYRZT522mo">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=10eHOdm7vVeLEKzdgzh5tqHOYRZT522mo&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=10eHOdm7vVeLEKzdgzh5tqHOYRZT522mo&sz=w800" alt="Comedor 1">
                 <p>Comedor Integrado</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1aUfr3MRWY01pznFmAJTxVo3IGW8aMcLv">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1aUfr3MRWY01pznFmAJTxVo3IGW8aMcLv&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1aUfr3MRWY01pznFmAJTxVo3IGW8aMcLv&sz=w800" alt="Comedor 2">
                 <p>Espacios Luminosos</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1bsmDY6xtSJ8gY3D13ppiOynv253aahkT">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1bsmDY6xtSJ8gY3D13ppiOynv253aahkT&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1bsmDY6xtSJ8gY3D13ppiOynv253aahkT&sz=w800" alt="Cocina">
                 <p>Cocina Completa</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1quSjYX8mDlBgkZ9XKl0Qsy1_TYXyBjfn">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1quSjYX8mDlBgkZ9XKl0Qsy1_TYXyBjfn&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1quSjYX8mDlBgkZ9XKl0Qsy1_TYXyBjfn&sz=w800" alt="Baño">
                 <p>Baño Completo con Bidet</p>
             </div>
 
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2&sz=w800" alt="Dormitorio 1">
                 <p>Dormitorio Principal</p>
             </div>
-            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/uc?export=view&id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj">
+            <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj&sz=w800" alt="Dormitorio 2">
                 <p>Habitación Climatizada</p>
             </div>
@@ -137,9 +188,81 @@
 
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <img class="lightbox-content" id="lightbox-img" alt="Vista ampliada">
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Carrusel de portada
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            if(slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 4000);
+            }
+
+            // Simulador financiero
+            const nightsInput = document.getElementById('nights');
+            const seasonSelect = document.getElementById('season');
+            const totalPriceSpan = document.getElementById('totalPrice');
+            const bookingForm = document.getElementById('bookingForm');
+
+            function calculatePrice() {
+                if(!nightsInput || !seasonSelect || !totalPriceSpan) return;
+                const nights = parseInt(nightsInput.value) || 0;
+                const pricePerNight = seasonSelect.value === 'alta' ? 85 : 60;
+                totalPriceSpan.textContent = nights * pricePerNight;
+            }
+            if(nightsInput) nightsInput.addEventListener('input', calculatePrice);
+            if(seasonSelect) seasonSelect.addEventListener('change', calculatePrice);
+
+            if(bookingForm) {
+                bookingForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    bookingForm.reset();
+                    calculatePrice();
+                });
+            }
+
+            // Funcionalidad Lightbox Limpia (Click para ampliar)
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const triggers = document.querySelectorAll('.lightbox-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    const fullUrl = trigger.getAttribute('data-full');
+                    if(lightboxImg && lightbox) {
+                        lightboxImg.src = fullUrl;
+                        lightbox.classList.add('open');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            function closeBox() {
+                if(lightbox && lightboxImg) {
+                    lightbox.classList.remove('open');
+                    lightboxImg.src = '';
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if(lightboxClose) lightboxClose.addEventListener('click', closeBox);
+            if(lightbox) {
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeBox();
+                });
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeBox();
+            });
+        });
+    </script>
 </body>
 </html>

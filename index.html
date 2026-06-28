@@ -69,7 +69,7 @@
             color: var(--primary);
         }
 
-        /* Hero / Carousel Simulation in Pure HTML/CSS */
+        /* Hero / Carousel */
         .hero {
             position: relative;
             height: 80vh;
@@ -82,7 +82,7 @@
             display: flex;
             width: 300%;
             height: 100%;
-            animation: scrollCarousel 15s infinite ease-in-out;
+            animation: scrollCarousel 12s infinite ease-in-out;
         }
 
         .carousel-slide {
@@ -105,7 +105,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -165,12 +165,7 @@
             font-weight: 600;
         }
 
-        .welcome-text {
-            font-size: 18px;
-            color: #666;
-        }
-
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -197,7 +192,7 @@
             background-color: var(--accent);
         }
 
-        /* Features / Services */
+        /* Features */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -219,7 +214,7 @@
             margin-bottom: 10px;
         }
 
-        /* Gallery Grid */
+        /* Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -241,7 +236,7 @@
 
         .gallery-img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             display: block;
         }
@@ -261,7 +256,7 @@
             color: #777;
         }
 
-        /* Info Grid (Check-in / Tourism) */
+        /* Info Grid */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -353,15 +348,11 @@
         </nav>
     </header>
 
-    <!-- Portada con Carrusel de Imágenes llamativas -->
     <section class="hero">
         <div class="carousel-track">
-            <!-- Portada -->
-            <div class="carousel-slide" style="background-image: url('https://drive.google.com/uc?export=view&id=1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf');"></div>
-            <!-- Entrada -->
-            <div class="carousel-slide" style="background-image: url('https://drive.google.com/uc?export=view&id=1eIOXHBZiBnxcQvV4RAvuNSWJY8rxmPWO');"></div>
-            <!-- Fachada -->
-            <div class="carousel-slide" style="background-image: url('https://drive.google.com/uc?export=view&id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo');"></div>
+            <div class="carousel-slide" style="background-image: url('https://docs.google.com/uc?export=view&id=1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf');"></div>
+            <div class="carousel-slide" style="background-image: url('https://docs.google.com/uc?export=view&id=1eIOXHBZiBnxcQvV4RAvuNSWJY8rxmPWO');"></div>
+            <div class="carousel-slide" style="background-image: url('https://docs.google.com/uc?export=view&id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo');"></div>
         </div>
         <div class="hero-overlay">
             <h1 class="hero-title">Don Vito</h1>
@@ -372,17 +363,15 @@
         </div>
     </section>
 
-    <!-- Sección Campo/Frase de Marketing -->
     <section class="welcome-section">
         <p class="welcome-phrase">"Sentite en el campo disfrutando de la naturaleza"</p>
-        <div style="margin-top: 30px; border-radius: 8px; overflow: hidden; height: 350px; background-image: url('https://drive.google.com/uc?export=view&id=1g-bc8PqV-pQv7l8rSlSnxy9YbGJ5aQ4U'); background-size: cover; background-position: center;">
+        <div style="margin-top: 30px; border-radius: 8px; overflow: hidden; height: 400px; background-image: url('https://docs.google.com/uc?export=view&id=1g-bc8PqV-pQv7l8rSlSnxy9YbGJ5aQ4U'); background-size: cover; background-position: center;">
         </div>
     </section>
 
     <div class="container">
 
-        <!-- Servicios Incluidos -->
-        <section id="servicios" style="margin-top: 40px;">
+        <section id="servicios">
             <h2 class="section-title">Comodidades Destacadas</h2>
             <div class="features-grid">
                 <div class="feature-card">
@@ -408,13 +397,12 @@
             </div>
         </section>
 
-        <!-- Galería de Instalaciones con todas las imágenes proporcionadas -->
         <section id="galeria">
             <h2 class="section-title">Galería de Fotos</h2>
             <div class="gallery-grid">
                 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=16QWKZDevX6XyOoijgker_jiQCejudo-8" alt="Piscina">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=16QWKZDevX6XyOoijgker_jiQCejudo-8" alt="Piscina 1">
                     <div class="gallery-info">
                         <h4>Piscina Principal</h4>
                         <p>Refrescate y disfrutá del sol en nuestro parque.</p>
@@ -422,7 +410,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA" alt="Piscina 2">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA" alt="Piscina 2">
                     <div class="gallery-info">
                         <h4>Espejo de Agua</h4>
                         <p>Momentos de relax rodeados de verde.</p>
@@ -430,7 +418,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx" alt="Patio">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx" alt="Patio">
                     <div class="gallery-info">
                         <h4>Parque y Patio</h4>
                         <p>Extenso jardín para conectar con la tranquilidad.</p>
@@ -438,7 +426,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L" alt="Parrilla">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L" alt="Parrilla">
                     <div class="gallery-info">
                         <h4>Zona de Parrilla</h4>
                         <p>El lugar ideal para compartir un clásico asado argentino.</p>
@@ -446,7 +434,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb" alt="Living">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb" alt="Living">
                     <div class="gallery-info">
                         <h4>Living Confortable</h4>
                         <p>Espacio cálido con salamandra a leña ideal para descansar.</p>
@@ -454,7 +442,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z" alt="Garage">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z" alt="Garage">
                     <div class="gallery-info">
                         <h4>Sector Garage</h4>
                         <p>Espacio semicubierto y seguro para vehículos.</p>
@@ -462,7 +450,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL" alt="Fogata">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL" alt="Fogata">
                     <div class="gallery-info">
                         <h4>Fogón Nocturno</h4>
                         <p>Perfecto para noches mágicas bajo las estrellas.</p>
@@ -470,7 +458,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46" alt="Fogata 2">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46" alt="Fogata 2">
                     <div class="gallery-info">
                         <h4>Área de Fogata</h4>
                         <p>Reuniones inolvidables al calor del fuego.</p>
@@ -478,7 +466,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo" alt="Fachada">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo" alt="Fachada 1">
                     <div class="gallery-info">
                         <h4>Fachada Exterior</h4>
                         <p>Estilo rústico y encantador que te da la bienvenida.</p>
@@ -486,7 +474,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G" alt="Fachada 2">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G" alt="Fachada 2">
                     <div class="gallery-info">
                         <h4>Fachada Don Vito</h4>
                         <p>Arquitectura tradicional integrada con el paisaje rural.</p>
@@ -494,7 +482,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2" alt="Dormitorio 1">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2" alt="Dormitorio 1">
                     <div class="gallery-info">
                         <h4>Dormitorio Principal</h4>
                         <p>Habitaciones confortables diseñadas para un descanso profundo.</p>
@@ -502,7 +490,7 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj" alt="Dormitorio 2">
+                    <img class="gallery-img" src="https://docs.google.com/uc?export=view&id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj" alt="Dormitorio 2">
                     <div class="gallery-info">
                         <h4>Segundo Dormitorio</h4>
                         <p>Ambientes luminosos, limpios y perfectamente equipados.</p>
@@ -510,114 +498,4 @@
                 </div>
 
                 <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=10eHOdm7vVeLEKzdgzh5tqHOYRZT522mo" alt="Comedor">
-                    <div class="gallery-info">
-                        <h4>Comedor Familiar</h4>
-                        <p>Mesa amplia para disfrutar de las mejores comidas en familia.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1aUfr3MRWY01pznFmAJTxVo3IGW8aMcLv" alt="Comedor 2">
-                    <div class="gallery-info">
-                        <h4>Espacio de Reunión</h4>
-                        <p>Detalles acogedores que te hacen sentir como en casa.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1bsmDY6xtSJ8gY3D13ppiOynv253aahkT" alt="Cocina">
-                    <div class="gallery-info">
-                        <h4>Cocina Totalmente Equipada</h4>
-                        <p>Todo lo necesario para preparar tus platos favoritos.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1WrAD3h6L4s4zp8e0uTrJZZour_CwrQRe" alt="Mesada">
-                    <div class="gallery-info">
-                        <h4>Detalle de Cocina</h4>
-                        <p>Funcionalidad y comodidad en cada rincón.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1quSjYX8mDlBgkZ9XKl0Qsy1_TYXyBjfn" alt="Baño">
-                    <div class="gallery-info">
-                        <h4>Baño Completo</h4>
-                        <p>Higiene, modernidad y confort impecables.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1YXcnvEUyc5zhC2h-Gc6ebliE-bmpJaFe" alt="Galeria">
-                    <div class="gallery-info">
-                        <h4>Galería Exterior</h4>
-                        <p>Perfecta para tomar unos mates a la tarde.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=16GCQwkMsQWgOP4SGdgObWvv_anQGHsgU" alt="Galeria 2">
-                    <div class="gallery-info">
-                        <h4>Galería y Sombra</h4>
-                        <p>Disfrutá del aire libre con total comodidad.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <img class="gallery-img" src="https://drive.google.com/uc?export=view&id=1PvNF-Ip9prsam874GF6sNeyJHA0w56Z_" alt="Horno de Barro">
-                    <div class="gallery-info">
-                        <h4>Horno de Barro Tradicional</h4>
-                        <p>Cociná con el sabor único de la tradición del campo.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Información Útil e Info de Turismo -->
-        <section id="informacion" class="info-grid">
-            <div class="info-box">
-                <h3>Horarios de Estadía</h3>
-                <ul class="info-list">
-                    <li><span class="label">Check-in:</span> <span>Desde 15:00 hs</span></li>
-                    <li><span class="label">Check-out:</span> <span>Hasta las 12:00 hs (AM)</span></li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h3>Lugares para Conocer</h3>
-                <ul class="info-list">
-                    <li><span class="label">San Andrés de Giles:</span> <span>13 km</span></li>
-                    <li><span class="label">Carlos Keen:</span> <span>16 km</span></li>
-                    <li><span class="label">Villa Ruiz:</span> <span>22 km</span></li>
-                    <li><span class="label">San Antonio de Areco:</span> <span>38 km</span></li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h3>En el Pueblo de Cucullú</h3>
-                <ul class="info-list">
-                    <li><span class="label">Puntos Turísticos:</span> <span>Estación de Cucullú</span></li>
-                    <li><span class="label">Cultura Local:</span> <span>Tradición alfarera y ladrillera</span></li>
-                    <li><span class="label">Para Comer:</span> <span>Recomendamos visitar Casa Gallo</span></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Ubicación -->
-        <section id="ubicacion" class="map-section">
-            <h2 class="section-title">Nuestra Ubicación</h2>
-            <p>Nos encontramos en el pintoresco pueblo rural de Cucullú.</p>
-            <a href="http://maps.google.com/?q=Cucullu,+Buenos+Aires" class="map-btn" target="_blank">Ver en Google Maps</a>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Don Vito - Casa de Huéspedes en Cucullú. Todos los derechos reservados.</p>
-    </footer>
-
-</body>
-</html>
+                    <img class="gallery-img" src="

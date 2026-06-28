@@ -315,6 +315,34 @@
             color: var(--text);
         }
 
+        /* Contact Section */
+        .contact-section {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .anfitriona-title {
+            font-size: 20px;
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
         /* Maps Section */
         .map-section {
             background: var(--white);
@@ -527,6 +555,7 @@
         <div class="nav-container">
             <a href="#" class="logo">DON VITO</a>
             
+            <!-- Checkbox y botón del menú hamburguesa -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="menu-button-label">
                 <span></span>
@@ -539,6 +568,7 @@
                 <li><a href="#galeria">Instalaciones</a></li>
                 <li><a href="#informacion">Información</a></li>
                 <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
             </ul>
         </div>
@@ -793,6 +823,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN DE COMENTARIOS -->
         <section id="opiniones" class="comments-section">
             <h2 class="section-title">Opiniones de nuestros Huéspedes</h2>
             
@@ -817,6 +848,18 @@
             </div>
         </section>
 
+        <!-- NUEVA SECCIÓN DE CONTACTO ANFITRIONA -->
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contacto Directo</h2>
+            <div class="contact-box">
+                <p>Ante cualquier consulta o inconveniente, no duden en comunicarse.</p>
+                <div class="anfitriona-title">Anfitriona: Graciela</div>
+                <a href="https://wa.me/5491154523758?text=Hola%20Graciela!%20Me%20comunico%20desde%20la%20p%C3%A1gina%20web%20por%20una%20consulta." class="btn-whatsapp" target="_blank">
+                    WhatsApp: 11 5452-3758
+                </a>
+            </div>
+        </section>
+
         <section id="ubicacion" class="map-section">
             <h2 class="section-title">Nuestra Ubicación</h2>
             <p>Nos encontramos en el pintoresco pueblo rural de Cucullú.</p>
@@ -829,6 +872,7 @@
         <p>© 2026 Don Vito - Casa de Huéspedes en Cucullú. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- LÓGICA DE JAVASCRIPT CONEXIÓN APPS SCRIPT -->
     <script>
         const SCRIPT_URL = 'TU_URL_DE_APPS_SCRIPT_AQUI';
 

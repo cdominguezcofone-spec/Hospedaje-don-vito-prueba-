@@ -8,25 +8,39 @@
     <style>
         .hero {
             position: relative !important;
-            height: 50vh !important;
-            min-height: 350px !important;
+            height: 55vh !important;
+            min-height: 380px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             text-align: center !important;
             color: white !important;
             overflow: hidden !important;
-            background-color: #222 !important;
+            background-color: #1a202c !important; /* Color oscuro de respaldo de fondo */
         }
-        .hero-bg {
+        /* Contenedor de las imágenes deslizantes */
+        .slider-container {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
+        }
+        .slide {
             position: absolute !important;
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            object-position: center 35% !important;
-            z-index: 1 !important;
+            object-position: center center !important;
+            opacity: 0 !important;
+            transition: opacity 1.2s ease-in-out !important; /* Transición suave de fundido */
+        }
+        /* Clase activa que muestra la foto actual */
+        .slide.active {
+            opacity: 1 !important;
         }
         .hero-overlay {
             position: absolute !important;
@@ -34,7 +48,7 @@
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
-            background: rgba(0, 0, 0, 0.4) !important;
+            background: rgba(0, 0, 0, 0.45) !important;
             z-index: 2 !important;
         }
         .hero-content {
@@ -45,8 +59,13 @@
     </style>
 </head>
 <body>
+
     <header class="hero">
-        <img class="hero-bg" src="https://docs.google.com/thumbnail?id=1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf&sz=w1600" alt="Portada Don Vito">
+        <div class="slider-container">
+            <img class="slide active" src="https://docs.google.com/thumbnail?id=1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf&sz=w1600" alt="Portada Don Vito">
+            <img class="slide" src="https://docs.google.com/thumbnail?id=16QWKZDevX6XyOoijgker_jiQCejudo-8&sz=w1600" alt="Piscina Don Vito">
+            <img class="slide" src="https://docs.google.com/thumbnail?id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx&sz=w1600" alt="Jardín Don Vito">
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Don Vito</h1>
@@ -77,7 +96,7 @@
                 <p>Amplio Jardín</p>
             </div>
             <div class="gallery-item">
-                <img src="https://docs.google.com/thumbnail?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L&sz=w800" alt="Parrilla">
+                <img src="https://docs.google.com/uc?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L" alt="Parrilla">
                 <p>Sector de Parrilla</p>
             </div>
             <div class="gallery-item">
@@ -167,6 +186,43 @@
         <div id="successMessage" class="hidden">¡Solicitud enviada con éxito!</div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Lógica del Carrusel Automático de Portada
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const slideInterval = 4000; // Cambia de foto cada 4 segundos
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, slideInterval);
+
+        // Mantener la lógica previa de tu simulador de precios
+        const bookingForm = document.getElementById('bookingForm');
+        if (bookingForm) {
+            const nightsInput = document.getElementById('nights');
+            const seasonSelect = document.getElementById('season');
+            const totalPriceSpan = document.getElementById('totalPrice');
+
+            function calculatePrice() {
+                const nights = parseInt(nightsInput.value) || 0;
+                const pricePerNight = seasonSelect.value === 'alta' ? 85 : 60;
+                totalPriceSpan.textContent = nights * pricePerNight;
+            }
+
+            nightsInput.addEventListener('input', calculatePrice);
+            seasonSelect.addEventListener('change', calculatePrice);
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('successMessage').classList.remove('hidden');
+                bookingForm.reset();
+                calculatePrice();
+            });
+        }
+    </script>
 </body>
 </html>

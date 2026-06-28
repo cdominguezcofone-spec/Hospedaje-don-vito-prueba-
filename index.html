@@ -17,7 +17,6 @@
         .campo-img { max-width: 800px; width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
-        /* SECCIÓN DE COMENTARIOS Y ESTRELLAS */
         .reviews-section { max-width: 900px; margin: 40px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .rating-input { display: flex; gap: 5px; margin-bottom: 15px; }
         .star { font-size: 30px; color: #cbd5e0; cursor: pointer; transition: color 0.2s ease; }
@@ -54,7 +53,7 @@
 
     <section class="about">
         <h2>Bienvenidos a Don Vito</h2>
-        <p>Ubicada en el tranquilo entorno de Cucullú, nuestra casa te ofrece una estadía de descanso. Contamos con <strong>aire acondicionado, wifi, parking</strong> y el calor hogareño de nuestra <strong>salamandra a leña</strong> para que disfrutes de tu estadía. Disfrutá de total comodidad con tu propia <strong>piscina, jardín y parking</strong>.</p>
+        <p>Ubicada en el tranquilo entorno de Cucullú, nuestra casa te ofrece una estadía de descanso. Contamos con <strong>aire acondicionado, wifi, parking</strong> y el calor hogareño de nuestra <strong>salamandra a leña</strong> para que disfrutes de tu estadía en cualquier época del año.</p>
     </section>
 
     <section class="gallery">
@@ -69,13 +68,9 @@
         </div>
     </section>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/5491154523758" class="whatsapp-float" target="_blank">Consultá por WhatsApp</a>
-
-    <!-- ... (El resto del código de Reviews y Reservas se mantiene igual) ... -->
+    <a href="https://wa.me/TUNUMEROAQUI" class="whatsapp-float" target="_blank">Consultá por WhatsApp</a>
     
     <script>
-        // Carrusel
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
         setInterval(() => {
@@ -83,8 +78,6 @@
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }, 4000);
-        
-        // ... (resto de tu script original)
     </script>
 </body>
 </html>

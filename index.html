@@ -54,6 +54,77 @@
             z-index: 3 !important;
             padding: 0 20px !important;
         }
+
+        /* SECCIÓN DE COMENTARIOS Y ESTRELLAS */
+        .reviews-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .rating-input {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .star {
+            font-size: 30px;
+            color: #cbd5e0;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .star.selected, .star:hover {
+            color: #ecc94b;
+        }
+        .comments-display {
+            margin-top: 30px;
+            border-top: 2px solid #edf2f7;
+            padding-top: 20px;
+        }
+        .comment-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .comment-name {
+            font-weight: bold;
+            color: #2d3748;
+        }
+        .comment-stars {
+            color: #ecc94b;
+            font-size: 18px;
+        }
+        .comment-text {
+            color: #4a5568;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .textarea-comment {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 80px;
+            font-family: inherit;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -93,12 +164,10 @@
                 <img src="https://docs.google.com/thumbnail?id=1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx&sz=w800" alt="Patio">
                 <p>Amplio Jardín</p>
             </div>
-            
             <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L&sz=w800" alt="Sector de Parrilla">
                 <p>Sector de Parrilla</p>
             </div>
-
             <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL&sz=w800" alt="Fogata 1">
                 <p>Espacio de Fogón</p>
@@ -108,7 +177,7 @@
                 <p>Noches de Fogata</p>
             </div>
             <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo&sz=w1200">
-                <img src="https://docs.google.com/thumbnail?id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo&sz=w800" alt="Fachada 1">
+                <img src="https://docs.google.com/thumbnail?id=1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo&sz=w800" alt="Entrada Principal">
                 <p>Entrada Principal</p>
             </div>
             <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G&sz=w1200">
@@ -148,6 +217,50 @@
             <div class="gallery-item lightbox-trigger" data-full="https://docs.google.com/thumbnail?id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj&sz=w1200">
                 <img src="https://docs.google.com/thumbnail?id=1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj&sz=w800" alt="Dormitorio 2">
                 <p>Habitación Climatizada</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section">
+        <h3>Opiniones de nuestros Huéspedes</h3>
+        
+        <form id="reviewForm">
+            <div class="form-group">
+                <label>Tu Calificación:</label>
+                <div class="rating-input" id="starContainer">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reviewName">Nombre:</label>
+                <input type="text" id="reviewName" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="reviewText">Comentario:</label>
+                <textarea id="reviewText" class="textarea-comment" required placeholder="Contanos tu experiencia en Don Vito..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" style="background-color: #2b6cb0;">Publicar Opinión</button>
+        </form>
+
+        <div class="comments-display" id="commentsContainer">
+            <h4>Reseñas Recientes</h4>
+            <div class="comment-card">
+                <div class="comment-header">
+                    <span class="comment-name">Carlos Mendoza</span>
+                    <span class="comment-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+                <p class="comment-text">Excelente lugar para desconectar. La piscina privada y el parque están impecables. Ideal para ir en familia.</p>
+            </div>
+            <div class="comment-card">
+                <div class="comment-header">
+                    <span class="comment-name">Mariana Gómez</span>
+                    <span class="comment-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                </div>
+                <p class="comment-text">Muy cómoda la casa y excelente la atención. El espacio del fogón a la noche es mágico.</p>
             </div>
         </div>
     </section>
@@ -228,7 +341,7 @@
                 });
             }
 
-            // Funcionalidad Lightbox Limpia (Click para ampliar)
+            // Funcionalidad Lightbox (Click para ampliar)
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxClose = document.querySelector('.lightbox-close');
@@ -262,6 +375,77 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeBox();
             });
+
+            // LÓGICA DE ESTRELLAS Y COMENTARIOS EN VIVO
+            const stars = document.querySelectorAll('#starContainer .star');
+            let selectedRating = 5; // Por defecto 5 estrellas
+
+            stars.forEach(star => {
+                // Resaltar estrellas al pasar el mouse
+                star.addEventListener('mouseover', () => {
+                    const value = star.getAttribute('data-value');
+                    updateStars(value);
+                });
+                // Restaurar la selección al sacar el mouse
+                star.addEventListener('mouseout', () => {
+                    updateStars(selectedRating);
+                });
+                // Fijar la puntuación al hacer clic
+                star.addEventListener('click', () => {
+                    selectedRating = parseInt(star.getAttribute('data-value'));
+                    updateStars(selectedRating);
+                });
+            });
+
+            function updateStars(rating) {
+                stars.forEach(star => {
+                    const value = parseInt(star.getAttribute('data-value'));
+                    if (value <= rating) {
+                        star.classList.add('selected');
+                    } else {
+                        star.classList.remove('selected');
+                    }
+                });
+            }
+            updateStars(selectedRating); // Inicialización
+
+            // Guardar e imprimir el comentario en la web de manera instantánea
+            const reviewForm = document.getElementById('reviewForm');
+            const commentsContainer = document.getElementById('commentsContainer');
+
+            if(reviewForm) {
+                reviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('reviewName').value;
+                    const text = document.getElementById('reviewText').value;
+
+                    // Crear string visual de estrellas
+                    let starString = '';
+                    for(let i = 1; i <= 5; i++) {
+                        starString += i <= selectedRating ? '&#9733;' : '&#9734;';
+                    }
+
+                    // Estructurar la nueva tarjeta de comentario HTML
+                    const newComment = document.createElement('div');
+                    newComment.className = 'comment-card';
+                    newComment.innerHTML = `
+                        <div class="comment-header">
+                            <span class="comment-name">${name}</span>
+                            <span class="comment-stars">${starString}</span>
+                        </div>
+                        <p class="comment-text">${text}</p>
+                    `;
+
+                    // Insertar el nuevo comentario al principio de la lista
+                    commentsContainer.insertBefore(newComment, commentsContainer.querySelector('.comment-card'));
+
+                    // Resetear formulario
+                    reviewForm.reset();
+                    selectedRating = 5;
+                    updateStars(5);
+                });
+            }
         });
     </script>
 </body>

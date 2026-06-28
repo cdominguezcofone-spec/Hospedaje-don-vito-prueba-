@@ -45,10 +45,21 @@ header {
     letter-spacing: 1px;
 }
 
+/* MENÚ CON SCROLL HORIZONTAL */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+}
+
+/* Oculta la barra de scroll en navegadores basados en Webkit */
+.nav-links::-webkit-scrollbar {
+    display: none; 
 }
 
 .nav-links a {
@@ -62,7 +73,7 @@ header {
     color: var(--primary);
 }
 
-/* Hero / Slider con JS */
+/* Hero / Carousel */
 .hero {
     position: relative;
     height: 80vh;
@@ -71,30 +82,25 @@ header {
     background-color: #333;
 }
 
-.carousel-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.carousel-track {
+    display: flex;
+    width: 300%;
     height: 100%;
+    animation: scrollCarousel 12s infinite ease-in-out;
 }
 
 .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 33.333%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 1;
+    position: relative;
 }
 
-.carousel-slide.active {
-    opacity: 1;
-    z-index: 2;
+@keyframes scrollCarousel {
+    0%, 28% { transform: translateX(0%); }
+    33%, 61% { transform: translateX(-33.333%); }
+    66%, 100% { transform: translateX(-66.666%); }
 }
 
 .hero-overlay {
@@ -161,15 +167,6 @@ header {
     font-style: italic;
     margin-bottom: 20px;
     font-weight: 600;
-}
-
-.welcome-img-box {
-    margin-top: 30px;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
 }
 
 /* Container */
@@ -326,6 +323,114 @@ header {
     background-color: var(--primary-dark);
 }
 
+/* Comments Section */
+.comments-section {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    margin-bottom: 60px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.comment-form h3 {
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+}
+
+.comment-form input, .comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #ffc107;
+}
+
+.btn-submit {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-dark);
+}
+
+.comments-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-name {
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.comment-stars {
+    color: #ffc107;
+    font-size: 18px;
+}
+
+.comment-text {
+    color: #555;
+    font-size: 15px;
+}
+
 footer {
     background-color: var(--primary-dark);
     color: var(--white);
@@ -334,8 +439,21 @@ footer {
     margin-top: 40px;
 }
 
+/* ADAPTACIÓN CELULARES */
 @media (max-width: 768px) {
     .hero-title { font-size: 36px; }
     .hero-subtitle { font-size: 18px; }
-    .nav-container { flex-direction: column; gap: 15px; }
+    
+    .nav-container { 
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 15px 5px;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

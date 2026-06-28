@@ -4,30 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don Vito | Casa de Huéspedes en Cucullú</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        .hero { position: relative !important; height: 55vh !important; min-height: 380px !important; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; color: white !important; overflow: hidden !important; background-color: #1a202c !important; }
-        .slider-container { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; z-index: 1 !important; }
-        .slide { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center center !important; opacity: 0 !important; transition: opacity 1.2s ease-in-out !important; }
-        .slide.active { opacity: 1 !important; }
-        .hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(0, 0, 0, 0.45) !important; z-index: 2 !important; }
-        .hero-content { position: relative !important; z-index: 3 !important; padding: 0 20px !important; }
-
-        .section-campo { padding: 50px 20px; text-align: center; background: #f9f9f9; }
-        .campo-img { max-width: 800px; width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; }
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 9999; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-
-        .reviews-section { max-width: 900px; margin: 40px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .rating-input { display: flex; gap: 5px; margin-bottom: 15px; }
-        .star { font-size: 30px; color: #cbd5e0; cursor: pointer; transition: color 0.2s ease; }
-        .star.selected, .star:hover { color: #ecc94b; }
-        .comments-display { margin-top: 30px; border-top: 2px solid #edf2f7; padding-top: 20px; }
-        .comment-card { background: #f7fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-        .comment-name { font-weight: bold; color: #2d3748; }
-        .comment-stars { color: #ecc94b; font-size: 18px; }
-        .comment-text { color: #4a5568; margin: 0; font-size: 0.95rem; }
-        .textarea-comment { width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box; resize: vertical; min-height: 80px; font-family: inherit; }
+        body { font-family: sans-serif; margin: 0; line-height: 1.6; }
+        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: #333; overflow: hidden; }
+        .slider-container { position: absolute; width: 100%; height: 100%; }
+        .slide { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s; }
+        .slide.active { opacity: 1; }
+        .hero-content { position: relative; z-index: 2; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 10px; }
+        
+        .section-campo { padding: 40px 20px; text-align: center; background: #f9f9f9; }
+        .campo-img { max-width: 800px; width: 100%; border-radius: 10px; margin-bottom: 15px; }
+        
+        .gallery-container { padding: 40px 20px; max-width: 1100px; margin: auto; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .gallery-item p { text-align: center; font-weight: bold; margin-top: 8px; }
+        
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -35,48 +28,50 @@
     <header class="hero">
         <div class="slider-container">
             <img class="slide active" src="https://lh3.googleusercontent.com/d/1twuKLO-VMEDWHzejfjAVJtrgzXQSzOAf" alt="Portada">
-            <img class="slide" src="https://lh3.googleusercontent.com/d/1eIOXHBZiBnxcQvV4RAvuNSWJY8rxmPWO" alt="Entrada">
-            <img class="slide" src="https://lh3.googleusercontent.com/d/16QWKZDevX6XyOoijgker_jiQCejudo-8" alt="Piscina">
+            <img class="slide" src="https://lh3.googleusercontent.com/d/1I5qn9ZdiabCoTDkoymgvLff-E8ABj8Wo" alt="Fachada">
         </div>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Don Vito</h1>
             <p>Casa de Huéspedes en Cucullú</p>
-            <a href="#reservas" class="btn">Cotizar Estancia</a>
         </div>
     </header>
 
     <section class="section-campo">
         <img src="https://lh3.googleusercontent.com/d/1g-bc8PqV-pQv7l8rSlSnxy9YbGJ5aQ4U" alt="Campo" class="campo-img">
         <h2>Sentite en el campo disfrutando de la naturaleza</h2>
+        <p>Contamos con aire acondicionado, wifi, parking y nuestra salamandra a leña.</p>
     </section>
 
-    <section class="about">
-        <h2>Bienvenidos a Don Vito</h2>
-        <p>Ubicada en el tranquilo entorno de Cucullú, nuestra casa te ofrece una estadía de descanso. Contamos con <strong>aire acondicionado, wifi, parking</strong> y el calor hogareño de nuestra <strong>salamandra a leña</strong> para que disfrutes de tu estadía en cualquier época del año.</p>
-    </section>
-
-    <section class="gallery">
+    <div class="gallery-container">
         <h3>Nuestras Instalaciones</h3>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1YXcnvEUyc5zhC2h-Gc6ebliE-bmpJaFe" alt="Galeria"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/16GCQwkMsQWgOP4SGdgObWvv_anQGHsgU" alt="Galeria 2"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1PvNF-Ip9prsam874GF6sNeyJHA0w56Z_" alt="Horno"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1WrAD3h6L4s4zp8e0uTrJZZour_CwrQRe" alt="Cocina"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/16QWKZDevX6XyOoijgker_jiQCejudo-8" alt="Piscina"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx" alt="Jardin"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/16QWKZDevX6XyOoijgker_jiQCejudo-8" alt="Piscina"><p>Piscina 1</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1VlyD8bBr6hF9TmUOMPCRZaoKuKo-30wA" alt="Piscina"><p>Piscina 2</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1c_sxBmbR9aVeB1fTu9aPkxsZPPNbBBTx" alt="Patio"><p>Patio</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1Qh5aZChQLIwRhvofLozi0afWPiF46Y2L" alt="Parrilla"><p>Parrilla</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1_duNvq6ehREPGPxv-yeVoG2Mw5WkcNgb" alt="Living"><p>Living</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1BZ468sgpI1WP2y3nVAyGXBTUoO3xBh6Z" alt="Garage"><p>Parking</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1YWnNLMyA3S62RSE1FZUzqYWjPJnqs2BL" alt="Fogata"><p>Fogata</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1dqRv0ttswNK7iX1wnNElFLAS0TbwGk46" alt="Fogata"><p>Fogata 2</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1k1rFS4Rb53L1Mq-6rlDGiKmLCCdeHC5G" alt="Fachada"><p>Fachada 2</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1qYjklR9twbhLw7tj9oMPB02Jc4Lpx_U2" alt="Dormitorio"><p>Dormitorio 1</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1jz2xU264hbogyjA5Q7ViiBhmYBUSmjDj" alt="Dormitorio"><p>Dormitorio 2</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/10eHOdm7vVeLEKzdgzh5tqHOYRZT522mo" alt="Comedor"><p>Comedor</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1aUfr3MRWY01pznFmAJTxVo3IGW8aMcLv" alt="Comedor"><p>Comedor 2</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1bsmDY6xtSJ8gY3D13ppiOynv253aahkT" alt="Cocina"><p>Cocina</p></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/d/1quSjYX8mDlBgkZ9XKl0Qsy1_TYXyBjfn" alt="Baño"><p>Baño</p></div>
         </div>
-    </section>
+    </div>
 
     <a href="https://wa.me/TUNUMEROAQUI" class="whatsapp-float" target="_blank">Consultá por WhatsApp</a>
-    
+
     <script>
         const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+        let i = 0;
         setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            slides[i].classList.remove('active');
+            i = (i + 1) % slides.length;
+            slides[i].classList.add('active');
         }, 4000);
     </script>
 </body>

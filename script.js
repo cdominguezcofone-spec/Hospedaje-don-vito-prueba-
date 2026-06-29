@@ -67,28 +67,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 // --- 3.2 Envío de la reserva ---
-                btn.innerText = 'Enviando a Graciela...';
-                const nombre = document.getElementById('nombre').value;
-                const telefono = document.getElementById('telefono').value;
+                // --- 3.2 Envío de la reserva (CORREGIDO) ---
+btn.innerText = 'Enviando a Graciela...';
+const nombre = document.getElementById('nombre').value;
+const telefono = document.getElementById('telefono').value;
 
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nombre, telefono, checkin, checkout })
-                });
-
-                const msg = `Hola Graciela! Quiero realizar una nueva reserva:%0A%0A👤 *Nombre:* ${nombre}%0A📞 *Tel:* ${telefono}%0A🗓️ *Check-in:* ${checkin}%0A📅 *Check-out:* ${checkout}`;
-                window.open(`https://wa.me/5491154523758?text=${msg}`, '_blank');
-
-                alert('¡Solicitud registrada correctamente! Se abrirá WhatsApp para confirmar con Graciela.');
-                reservaForm.reset();
-            } catch (error) {
-                alert('Hubo un error al procesar la reserva. Por favor intenta nuevamente.');
-            } finally {
-                btn.disabled = false;
-                btn.innerText = 'Enviar Solicitud y Reservar';
-            }
-        });
-    }
+await fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre, telefono, checkin, checkout })
 });
+
+// He reemplazado %0A por %0D%0A para evitar los caracteres extraños
+const msg = `Hola Graciela! Quiero realizar una nueva reserva:%0D%0A%0D%0A👤 *Nombre:* ${nombre}%0D%0A📞 *Tel:* ${telefono}%0D%0A🗓️ *Check-in:* ${checkin}%0D%0A📅 *Check-out:* ${checkout}`;
+
+window.open(`https://wa.me/5491154523758?text=${msg}`, '_blank');
+
+alert('¡Solicitud registrada correctamente! Se abrirá WhatsApp para confirmar con Graciela.');
+reservaForm.reset();
